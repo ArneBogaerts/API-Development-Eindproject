@@ -84,3 +84,14 @@ def delete_cd_by_title(cd_title: str, db: Session = Depends(get_db)):
     db.commit()
     return db_cd
 
+@app.post("/users/", response_model=schemas.UserRead)
+def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
+    return crud.create_user(db=db, user=user)
+
+@app.get("/users/{username}", response_model=schemas.UserRead)
+def read_user(username: str, db: Session = Depends(get_db)):
+    db_user = crud.get_user_by_username(db, username=username)
+    if db_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    return db_user
+
