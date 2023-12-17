@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   api:
-    image: arnebogaerts/api-basisproject:latest
+    image: arnebogaerts/api-eindproject:latest
     ports:
       - 8000:8000
     depends_on:
