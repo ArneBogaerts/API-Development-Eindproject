@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-import models, schemas
+import models, schemas, auth
 
 def get_cd(db: Session, cd_id: int):
     return db.query(models.CD).filter(models.CD.id == cd_id).first()
@@ -90,3 +90,6 @@ def create_user(db: Session, user: schemas.UserCreate):
 
 def get_user_by_username(db: Session, username: str):
     return db.query(models.User).filter(models.User.username == username).first()
+
+def get_users(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.User).order_by(models.User.id).offset(skip).limit(limit).all()

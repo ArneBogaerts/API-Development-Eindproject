@@ -1,9 +1,9 @@
 from fastapi import Depends, FastAPI, HTTPException
-from sqlalchemy.orm import Session
-import crud, models, schemas
-from database import SessionLocal, engine
-from typing import List
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from sqlalchemy.orm import Session
+from typing import List
+from database import SessionLocal, engine
+import crud, models, schemas
 import auth
 
 models.Base.metadata.create_all(bind=engine)
@@ -110,12 +110,12 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
         )
     # Add the JWT case sub with the subject(user)
     access_token = auth.create_access_token(
-        data={"sub": user.email}
+        data={"sub": user.username}
     )
     #Return the JWT as a bearer token to be placed in the headers
     return {"access_token": access_token, "token_type": "bearer"}
 
-@app.get("/users/", response_model=list[schemas.User])
+@app.get("/users/", response_model=list[schemas.UserRead])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)):
     users = crud.get_users(db, skip=skip, limit=limit)
     return users
