@@ -10,3 +10,8 @@ bcrypt==4.0.1
 cffi==1.16.0
 python-jose==3.3.0
 cryptography==41.0.5
+asgiref==3.7.2
+click==8.1.7
+colorama==0.4.6
+starlette==0.14.2
+typing_extensions==4.9.0
