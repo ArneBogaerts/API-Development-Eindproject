@@ -47,4 +47,4 @@ jobs:
         done
 
     - name: Run tests
-      run: pytest myproject/test_main.py -v
+      run: pytest myproject/test.py -v
