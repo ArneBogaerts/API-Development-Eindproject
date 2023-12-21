@@ -38,7 +38,7 @@ jobs:
       run: |
         while true; do
           status=$(curl -sS -o /dev/null -w "%{http_code}" https://api-arnebogaerts.cloud.okteto.net/cds/)
-          if [ "$status" -ne 401 ]; then
+          if [ "$status" -ne 200 ]; then
             echo "Waiting for API to be ready..."
             sleep 5
           else
