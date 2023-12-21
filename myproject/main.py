@@ -68,6 +68,13 @@ def read_artists(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     artists = crud.get_artists(db, skip=skip, limit=limit)
     return artists
 
+@app.get("/artists/{artist_id}", response_model=schemas.Artist)
+def get_artist(artist_id: int, db: Session = Depends(get_db)):
+    artist = crud.get_artist(db, artist_id=artist_id)
+    if artist is None:
+        raise HTTPException(status_code=404, detail="Artist not found")
+    return artist
+
 @app.delete("/artists/{artist_id}", response_model=schemas.Artist)
 def delete_artist(artist_id: int, db: Session = Depends(get_db)):
     db_artist = crud.delete_artist(db, artist_id=artist_id)
@@ -126,3 +133,11 @@ def update_review_endpoint(review_id: int, review: schemas.ReviewCreate, db: Ses
     if updated_review is None:
         raise HTTPException(status_code=404, detail="Review not found")
     return updated_review
+
+@app.get("/reviews/{review_id}", response_model=schemas.Review)
+def get_review(review_id: int, db: Session = Depends(get_db)):
+    review = crud.get_review(db, review_id=review_id)
+    if review is None:
+        raise HTTPException(status_code=404, detail="Review not found")
+    return review
+

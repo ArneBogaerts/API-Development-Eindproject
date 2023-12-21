@@ -8,7 +8,7 @@ def get_cd(db: Session, cd_id: int):
 def get_cds(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.CD).order_by(models.CD.id).offset(skip).limit(limit).all()
 def get_artist(db: Session, artist_id: int):
-    return db.query(models.Artist).order_by(models.Artist.id).offset(skip).limit(limit).all()
+    return db.query(models.Artist).filter(models.Artist.id == artist_id).first()
 def get_artists(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Artist).order_by(models.Artist.id).offset(skip).limit(limit).all()
 def create_artist(db: Session, artist: schemas.ArtistBase):
@@ -20,6 +20,9 @@ def create_artist(db: Session, artist: schemas.ArtistBase):
     db.commit()
     db.refresh(db_artist)
     return db_artist
+
+def get_review(db: Session, review_id: int):
+    return db.query(models.Review).filter(models.Review.id == review_id).first()
 
 def get_reviews_by_cd(db: Session, cd_id: int, skip: int = 0, limit: int = 10):
     return db.query(models.Review).filter(models.Review.cd_id == cd_id).offset(skip).limit(limit)
