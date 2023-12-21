@@ -119,3 +119,10 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)):
     users = crud.get_users(db, skip=skip, limit=limit)
     return users
+
+@app.delete("/users/{user_id}", response_model=schemas.DeleteMessage)
+def delete_user(user_id: int, db: Session = Depends(get_db)):
+    if crud.delete_user(db=db, user_id=user_id):
+        return {"detail": "User deleted successfully"}
+    else:
+        raise HTTPException(status_code=404, detail="User not found")

@@ -43,3 +43,5 @@ class UserRead(BaseModel):
     class Config:
         orm_mode = True
 
+class DeleteMessage(BaseModel):
+    detail: str

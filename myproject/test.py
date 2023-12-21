@@ -3,13 +3,20 @@ import json
 
 BASE_URL = "https://api-arnebogaerts.cloud.okteto.net"
 
+def create_test_user():
+    username = "testuser"
+    password = "testpassword"
+    user_data = {"username": username, "password": password}
+    response = requests.post(f"{BASE_URL}/users/", json=user_data)
+    assert response.status_code == 200
+    return username, password
+
 def get_access_token():
-    # Vervang deze met geldige inloggegevens
-    username = "Arne"
-    password = "abc123!"
+    username, password = create_test_user()  # Creëert een testgebruiker
     response = requests.post(f"{BASE_URL}/token", data={"username": username, "password": password})
     assert response.status_code == 200
     return response.json().get("access_token")
+
 
 def test_read_cds():
     response = requests.get(f"{BASE_URL}/cds/")
