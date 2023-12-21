@@ -102,3 +102,13 @@ def delete_user(db: Session, user_id: int):
         return True
     else:
         return False
+
+def update_review(db: Session, review_id: int, new_review: schemas.ReviewCreate):
+    db_review = db.query(models.Review).filter(models.Review.id == review_id).first()
+    if db_review is None:
+        return None
+    db_review.rating = new_review.rating
+    db_review.comment = new_review.comment
+    db.commit()
+    db.refresh(db_review)
+    return db_review
