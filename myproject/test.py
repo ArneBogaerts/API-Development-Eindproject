@@ -1,7 +1,7 @@
 import requests
 import json
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "https://api-arnebogaerts.cloud.okteto.net"
 
 def get_access_token():
     # Vervang deze met geldige inloggegevens
