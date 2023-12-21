@@ -16,6 +16,7 @@ jobs:
 
     - name: Upload container to Docker Hub with Push
       run: docker push ${{ secrets.DOCKER_USER }}/api-eindproject:latest
+      
 test:
     runs-on: ubuntu-latest
     name: Test endpoints
