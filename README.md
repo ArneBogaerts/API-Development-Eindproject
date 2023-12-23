@@ -1,3 +1,39 @@
+# Uitbreiding van het basisproject
+
+## Nieuwe functionaliteiten
+
+### Gebruikersbeheer:
+
+In deze uitbreiding is het nu ook mogelijk een gebruikersaccount toe te voegen. Deze heb ik gemaakt om de nieuwe functies (het hashen van wacthwoorden, en Oauth toepassing) te kunnen testen en aantonen.
+
+### Beveiliging via gehashte wacthwoorden en Oauth
+
+Op het nieuwe endpoint GET /users/ is zowel hashing als Oauth toegepast. Hierdoor kan je dit endpoint enkel gebruiken als je geauthenticeerd bent.
+
+### Put endpoint voor het aanpassen van reviews
+
+In mijn database is nu ook de mogelijkheid om een gehele review te "updaten" (PUT). Stel dat je een review hebt gegeven, maar na een bepaalde tijd wil je je mening herzien kan je gewoon doormiddel van het juiste ID te gebruiken je huidige review aanpassen.
+
+### Test van alle GET endpoints
+
+Door het gebruik te maken van zelfgemaakte scripts, kan ik mijn GET endpoints effectief testen en controleren of deze correct werken.
+
+### Testen van POST /artists/ endpoint
+
+Het POST endpoint /artists/ om een nieuwe artiest aan te maken wordt ook getest met een zelfgeschreven script.
+
+### Testen van DELETE /artists/ endpoint
+
+Het DELETE endpoint /artists/ om een artiest te verwijderen wordt ook getest met een zelfgeschreven script.
+
+### Testen van het nieuwe PUT reviews/{review_id} endpoint
+
+Het nieuwe PUT endpoint voor de reviews wordt met een uitgebreid en zelfgeschreven script uitvoerig getest.
+
+### Testfiles automatisch runnen met github actions
+
+Als ik een nieuwe push maak van mijn files naar deze github, dan zorg ik er met github actions voor dat al mijn tests automatisch gerunt worden door github. Wel op voorwaarde dat mijn API eerst gedeployed is op okteto. Deze tests blijven wachten tot deze echter is opgestart alvorens deze kan runnen.
+
 # Thema van de API: Muziekcollectie Beheer
 
 Deze API stelt gebruikers in staat om een digitale catalogus van cd's bij te houden. De gebruikers kunnen informatie over artiesten en cd's toevoegen, bekijken en verwijderen. Daarnaast is het mogelijk om beoordelingen (reviews) en commentaren over individuele cd's toe te voegen en te raadplegen.
