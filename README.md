@@ -35,10 +35,7 @@ Het nieuwe PUT endpoint voor de reviews wordt met een uitgebreid en zelfgeschrev
 Als ik een nieuwe push maak van mijn files naar deze github, dan zorg ik er met github actions voor dat al mijn tests automatisch gerunt worden door github. Wel op voorwaarde dat mijn API eerst gedeployed is op okteto. Deze tests blijven wachten tot deze echter is opgestart alvorens deze kan runnen.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 # Basisproject:
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Thema van de API: Muziekcollectie Beheer
 
