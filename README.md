@@ -34,6 +34,8 @@ Het nieuwe PUT endpoint voor de reviews wordt met een uitgebreid en zelfgeschrev
 
 Als ik een nieuwe push maak van mijn files naar deze github, dan zorg ik er met github actions voor dat al mijn tests automatisch gerunt worden door github. Wel op voorwaarde dat mijn API eerst gedeployed is op okteto. Deze tests blijven wachten tot deze echter is opgestart alvorens deze kan runnen.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Thema van de API: Muziekcollectie Beheer
 
 Deze API stelt gebruikers in staat om een digitale catalogus van cd's bij te houden. De gebruikers kunnen informatie over artiesten en cd's toevoegen, bekijken en verwijderen. Daarnaast is het mogelijk om beoordelingen (reviews) en commentaren over individuele cd's toe te voegen en te raadplegen.
