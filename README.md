@@ -34,6 +34,22 @@ Het nieuwe PUT endpoint voor de reviews wordt met een uitgebreid en zelfgeschrev
 
 Als ik een nieuwe push maak van mijn files naar deze github, dan zorg ik er met github actions voor dat al mijn tests automatisch gerunt worden door github. Wel op voorwaarde dat mijn API eerst gedeployed is op okteto. Deze tests blijven wachten tot deze echter is opgestart alvorens deze kan runnen.
 
+## Frontend
+
+### VUE
+
+Zoals je kan zien is er ook een nieuwe directory aangemaakt **/reviews**, hierin zit het project van de frontend. Hierin heb ik gebruik gemaakt van VUE, een javascript framework.
+
+### Hosting via netlify
+
+Op onderstaande link kan je mijn gehoste frontend op netlify terugvinden. Belangrijk om weten is wel dat deze wel de actieve API nodig heeft. In de environment variabele van dit project heb ik namelijk mijn persoonlijke okteto link van de API in gedeclareerd.
+**https://arnebogaerts-api-eindproject.netlify.app/**
+
+**NOTE:** Belangrijke sidenote, aangezien mijn okteto deployment na een periode van inactiviteit in sleep mode gaat kan het voorvallen dat de frontend tijdelijk niet werkt, aangezien de api die hij gebruikt dus in sleep mode is. Daarom voorzie ik hier alvast enkele screenshots.
+
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/c8ae2297-bac4-4703-9bf2-ff77136737ea)
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
 
