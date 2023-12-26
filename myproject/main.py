@@ -12,7 +12,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 origins = [
-    "https://arnebogaerts-api-eindproject.netlify.app"
+    "https://arnebogaerts-api-eindproject.netlify.app",
     "http://localhost:8080",  # Vue.js dev server
     "http://localhost:3000",  # Another allowed origin
 ]
