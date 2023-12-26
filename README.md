@@ -47,8 +47,10 @@ Op onderstaande link kan je mijn gehoste frontend op netlify terugvinden. Belang
 
 **NOTE:** Belangrijke sidenote, aangezien mijn okteto deployment na een periode van inactiviteit in sleep mode gaat kan het voorvallen dat de frontend tijdelijk niet werkt, aangezien de api die hij gebruikt dus in sleep mode is. Daarom voorzie ik hier alvast enkele screenshots.
 
+Hieronder kan je een afbeelding van de hoofdpagina terugvinden. Deze geeft een CD-lijst terug met alle cd's en dus ook de bijhorende artiesten van die cd.
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/c8ae2297-bac4-4703-9bf2-ff77136737ea)
-
+Vervolgens om nog een extra endpoint aan te spreken heb ik ook de reviews van een CD beschikbaar gemaakt. Als je op een album klik (zoals ik hier op het laatste album heb geklikt), dan krijg je de reviews die van dit album zijn gegeven.
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/5768e5c7-439a-41f7-a25e-42d0e6364061)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
