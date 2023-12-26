@@ -21,3 +21,4 @@ archive.zip
 test_main.http
 sqlitedb
 *.db
+.env
