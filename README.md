@@ -62,6 +62,23 @@ Onder deze screenshots, ga ik verder in detail over de nieuwe endpoints die ik t
 
 Dit endpoint is ontworpen om gedetailleerde informatie over een specifieke artiest op te halen op basis van hun unieke ID. Het biedt een eenvoudige en directe manier om gegevens over een enkele artiest uit de database te verkrijgen.
 
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/08258e83-69c9-49db-b589-289a62de052e)
+
+### Data ophalen:
+
+* Bij een GET-verzoek wordt aan de hand van de meegegeven artist_id in de URL de specifieke artiest in de database gezocht.
+* De artist_id is een unieke identifier die elke artiest in de database heeft.
+
+### Response:
+
+* De response is een JSON-object dat de details van de artiest bevat. Dit omvat typisch de id, name, en een lijst van CD's of albums geassocieerd met deze artiest, afhankelijk van hoe de relaties in de database zijn opgezet.
+* Als een artiest met de opgegeven ID niet wordt gevonden, geeft de API meestal een 404-fout terug met een bericht zoals "Artist not found".
+
+### Gebruik:
+
+* Een artiest ophalen: Om details van een specifieke artiest op te halen, zou je een GET-verzoek sturen naar /artists/{artist_id}. Vervang {artist_id} met de werkelijke ID van de artiest die je wilt opvragen.
+  ** Bijvoorbeeld: GET /artists/5 zal de details van de artiest met ID 5 ophalen.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
 
