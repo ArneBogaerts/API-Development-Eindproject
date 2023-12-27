@@ -180,6 +180,73 @@ Bij een GET-verzoek wordt de username die in de URL is opgegeven gebruikt om de 
 **User not found**, als er geen gebruiker met de opgegeven username wordt gevonden, reageert de API met een 404-statuscode en een bericht dat de gebruiker niet is gevonden. Dit helpt bij het diagnosticeren van typefouten of niet-bestaande accounts.
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/d3b73608-a7bf-4fec-96a9-a9e791354bf0)
 
+## ENDPOINT: GET /users/
+
+Dit endpoint haalt een lijst van alle gebruikers op uit de database. Het is vooral bedoeld voor beheerders of systemen die een overzicht nodig hebben van alle geregistreerde gebruikers. Aangezien dit gevoelige informatie kan onthullen, vereist het meestal authenticatie.
+
+### Authenticatie:
+
+Dit endpoint vereist dat de aanvrager geauthenticeerd is. Dit betekent dat je een geldig authenticatietoken moet meesturen, in mijn API is dat in de vorm van een JWT (JSON Web Token) in de Authorization-header van je verzoek.
+* Voorbeeld van Authorization-header: Authorization: Bearer **(HIER word de token dan geplaatst)**
+
+**Endpoint aanspreken als ingelogde users:**
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/d333dd25-cfa0-4c8c-9365-da6b9d69c027)
+**Endpoint aanspreken zonder ingelogd te zijn:**
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/23d7a8dc-b784-4051-82a3-06156b400894)
+
+### Data ophalen:
+
+Bij een GET-verzoek aan /users/ zal de server reageren met een lijst van gebruikers met hun username en id. Deze lijst is beperkt tot een bepaald aantal resultaten per verzoek, zoals zelf meegegeven in de **skip en limit**.
+
+### Response:
+
+* De response is typisch een lijst van gebruikers, waarbij elk gebruikersobject details bevat zoals id, username, en mogelijk andere informatie zoals e-mail of registratiedatum.
+* Als de aanvrager niet geauthenticeerd is, zal de API een 401 (Unauthorized) fout terugsturen met de melding **Not authenticated**.
+
+### Gebruik: 
+
+* Gebruikerslijst ophalen: Om een lijst van alle gebruikers te bekijken, verstuur je een geauthenticeerd GET-verzoek naar /users/.
+* Bijvoorbeeld: **GET /users/** met een geldig Authorization-header(correcte user die ingelogd is).
+
+## ENDPOINT POST /token
+
+Dit endpoint is ontworpen om een toegangstoken te verstrekken aan gebruikers die zich succesvol hebben geauthenticeerd. Dit token wordt vervolgens gebruikt voor het authenticeren van verzoeken aan het beveiligde endpoint **get /users/** binnen de API. Het is een essentieel onderdeel van systemen die gebruikmaken van token-gebaseerde authenticatie, zoals met JSON Web Tokens (JWT).
+
+### Authenticatiegegevens versturen:
+
+Een POST-verzoek naar /token vereist dat je de gebruikersnaam en het wachtwoord in de body van het verzoek verstuurt. Dit wordt vaak gedaan in de vorm van een form-data of JSON-object.
+
+### Response:
+
+Bij een succesvolle authenticatie, zal de API een toegangstoken terugsturen, meestal in de vorm van een JWT. Dit token bevat informatie over de gebruiker en een verloopdatum.
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/828d3fd5-7515-414a-94fe-c2003bbe458f)
+
+Bij een foute authenticatie word er geen token teruggestuurd en word de foutmelding **Incorrect username or password** teruggegeven.
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/dd00e719-ca02-4b85-949d-2bf586c5fc54)
+
+### Gebruik:
+
+* Een Token Verkrijgen: Om een token te verkrijgen, verstuur je een POST-verzoek met de juiste authenticatiegegevens naar /token. In mijn applicatie gebeurd dit automatisch bij het inloggen met een correct account. Vervolgens wordt deze gecontroleerd in het geauthoriseerde endpoint als je deze gebruikt.
+* Bijvoorbeeld: **POST /token** met de vereiste gebruikersnaam en wachtwoord in de body.
+
+## ENDPOINT: DELETE /users/{user_id}/
+
+Dit endpoint is bedoeld om een specifieke gebruiker uit het systeem te verwijderen op basis van de unieke gebruikers-ID. Het is een belangrijke functie voor beheerdoeleinden, gebruikersbeheer of wanneer een gebruiker besluit zijn account te verwijderen.
+
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/7e459fc9-4079-4474-b093-fd37749dc3dc)
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/77663aab-c95a-45c0-91a4-ae970184321d)
+
+### Data verwijderen:
+
+Bij een DELETE-verzoek wordt de **user_id** die in de URL is opgegeven gebruikt om de specifieke gebruiker in de database te identificeren en te verwijderen. Deze user_id is een unieke identificator voor elke gebruiker in het systeem.
+
+### Response:
+
+**Succesvolle verwijdering:** Bij een succesvolle verwijdering zal de API een statuscode 200 teruggeven met de melding
+
+
+
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
