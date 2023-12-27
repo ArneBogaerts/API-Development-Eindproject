@@ -77,7 +77,7 @@ Dit endpoint is ontworpen om gedetailleerde informatie over een specifieke artie
 ### Gebruik:
 
 * Een artiest ophalen: Om details van een specifieke artiest op te halen, zou je een GET-verzoek sturen naar /artists/{artist_id}. Vervang {artist_id} met de werkelijke ID van de artiest die je wilt opvragen.
-  ** Bijvoorbeeld: GET /artists/5 zal de details van de artiest met ID 5 ophalen.
+* Bijvoorbeeld: GET /artists/5 zal de details van de artiest met ID 5 ophalen.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
