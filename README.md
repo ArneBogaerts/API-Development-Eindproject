@@ -52,6 +52,11 @@ Hieronder kan je een afbeelding van de hoofdpagina terugvinden. Deze geeft een C
 Vervolgens om nog een extra endpoint aan te spreken heb ik ook de reviews van een CD beschikbaar gemaakt. Als je op een album klik (zoals ik hier op het laatste album heb geklikt), dan krijg je de reviews die van dit album zijn gegeven.
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/5768e5c7-439a-41f7-a25e-42d0e6364061)
 
+## De volledige API:
+
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/b6fef968-2a90-4d83-b3c6-9e207e05b688)
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/1335adc9-f1be-41a9-b295-0a92779b7a2c)
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
 
