@@ -45,7 +45,8 @@ Zoals je kan zien is er ook een nieuwe directory aangemaakt **/reviews**, hierin
 Op onderstaande link kan je mijn gehoste frontend op netlify terugvinden. Belangrijk om weten is wel dat deze wel de actieve API nodig heeft. In de environment variabele van dit project heb ik namelijk mijn persoonlijke okteto link van de API in gedeclareerd.
 **https://arnebogaerts-api-eindproject.netlify.app/**
 
-**NOTE:** Belangrijke sidenote, aangezien mijn okteto deployment na een periode van inactiviteit in sleep mode gaat kan het voorvallen dat de frontend tijdelijk niet werkt, aangezien de api die hij gebruikt dus in sleep mode is. Daarom voorzie ik hier alvast enkele screenshots.
+> [!NOTE]
+> Belangrijke sidenote, aangezien mijn okteto deployment na een periode van inactiviteit in sleep mode gaat kan het voorvallen dat de frontend tijdelijk niet werkt, aangezien de api die hij gebruikt dus in sleep mode is. Daarom voorzie ik hier alvast enkele screenshots.
 
 Hieronder kan je een afbeelding van de hoofdpagina terugvinden. Deze geeft een CD-lijst terug met alle cd's en dus ook de bijhorende artiesten van die cd.
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/c8ae2297-bac4-4703-9bf2-ff77136737ea)
@@ -127,6 +128,24 @@ Bij een GET-verzoek wordt de review_id die in de URL is opgegeven gebruikt om de
 
 * Een recensie ophalen: Om de details van een specifieke recensie te bekijken, verstuur je een GET-verzoek naar /reviews/{review_id}. Vervang {review_id} met de daadwerkelijke ID van de recensie die je wilt opvragen.
 * Bijvoorbeeld: **GET /reviews/123** zal de details van de recensie met ID 123 ophalen.
+
+## ENDPOINT: POST /users/
+
+Dit endpoint is bedoeld om een nieuwe gebruiker aan te maken in het systeem. Het stelt gebruikers in staat zich te registreren door hun informatie te verstrekken, zoals gebruikersnaam en wachtwoord. Dit is een essentieel onderdeel van veel applicaties die gebruikersaccounts en authenticatie vereisen. Ik heb deze entiteit toegevoegd om gebruikt te kunnen maken van Oauth en hashing.
+
+### Gegevens versturen:
+
+Een POST-verzoek naar /users/ vereist dat je gebruikersgegevens in de body van het verzoek verstuurt. Dit omvat typisch een gebruikersnaam en wachtwoord, en mogelijk aanvullende informatie afhankelijk van de vereisten van je API.
+
+* De body van het verzoek moet een JSON-object bevatten met ten minste de username en password:
+Bijvoorbeeld:
+
+{
+    "username": "nieuwegebruiker",
+    "password": "veiligWachtwoord123"
+}
+
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
