@@ -242,8 +242,13 @@ Bij een DELETE-verzoek wordt de **user_id** die in de URL is opgegeven gebruikt 
 
 ### Response:
 
-**Succesvolle verwijdering:** Bij een succesvolle verwijdering zal de API een statuscode 200 teruggeven met de melding
+**Succesvolle verwijdering:** Bij een succesvolle verwijdering zal de API een statuscode 200 teruggeven met de melding **User deleted succesfully**.
+**User not found:** Bij het verwijderen van een account dat niet bestaat geeft de API een 404 statuscode terug met de melding **User not found**.
 
+### Gebruik:
+
+*Een gebruiker verwijderen: Om een gebruiker te verwijderen, verstuur je een geauthenticeerd DELETE-verzoek naar /users/{user_id}. Vervang {user_id} met de ID van de gebruiker die je wilt verwijderen.
+* Bijvoorbeeld: **DELETE /users/123** zal de gebruiker met ID 123 uit het systeem verwijderen indien deze bestaat.
 
 
 
