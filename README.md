@@ -85,8 +85,27 @@ Dit endpoint stelt gebruikers in staat om een bestaande recensie te bewerken of 
 
 Hieronder ziet u eerst de GET-request van de review, om vervolgens het PUT-endpoint te gebruiken welke deze review aanpast om tot slot via een nieuwe GET-request de bevestiging te krijgen dat de aanpassing gedaan is.
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/07f234fa-3fa1-4fb5-accd-66f60ed2d7bb)
-![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/195b34bf-6e0f-48d3-a6c2-13d02b29a9b9)
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/6e86ca8e-b1e7-4c5b-b18b-a8f7284e4e22)
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/f5721b3d-b281-40a3-82bc-42d83773200c)
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/0c59191d-a340-4f38-aeb4-5a497d13c596)
 
+### Data bijwerken:
+
+* Een PUT-verzoek naar /reviews/{review_id} vereist dat je de review_id in de URL specificeert. Dit identificeert de specifieke recensie die je wilt bijwerken.
+* In de body van het verzoek stuur je de bijgewerkte gegevens mee, zoals de nieuwe beoordelingsscore en commentaar.
+
+### Request body:
+
+* De body van het verzoek bevat een JSON-object met de bijgewerkte velden zoals **rating** en **comment** en ook nog de **cd_id**.
+
+### Response:
+
+Bij een succesvolle update, zal de response meestal de bijgewerkte gegevens van de recensie terugsturen in de vorm van een JSON-object. Als de recensie met de opgegeven review_id niet wordt gevonden, zal de API een 404-fout terugsturen met een passende boodschap.
+
+### Gebruik:
+
+* Een recensie bijwerken: Om een recensie te bewerken, stuur je een PUT-verzoek met de nieuwe gegevens naar /reviews/{review_id}. Vervang {review_id} door de werkelijke ID van de recensie die je wilt bijwerken.
+* Bijvoorbeeld: PUT /reviews/321 met een body van **{ "rating": 4.5, "comment": "Nieuwe gedachten over dit album.", "cd_id": 5 }** zal de recensie met ID 321 bijwerken.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
