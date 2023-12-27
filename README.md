@@ -107,6 +107,26 @@ Bij een succesvolle update, zal de response meestal de bijgewerkte gegevens van 
 * Een recensie bijwerken: Om een recensie te bewerken, stuur je een PUT-verzoek met de nieuwe gegevens naar /reviews/{review_id}. Vervang {review_id} door de werkelijke ID van de recensie die je wilt bijwerken.
 * Bijvoorbeeld: PUT /reviews/321 met een body van **{ "rating": 4.5, "comment": "Nieuwe gedachten over dit album.", "cd_id": 5 }** zal de recensie met ID 321 bijwerken.
 
+## ENDPOINT: GET /reviews/{review_id}/
+
+Dit endpoint is bedoeld om specifieke details van een enkele recensie op te halen aan de hand van zijn unieke ID. Het biedt een manier om individuele recensiegegevens te bekijken, wat nuttig is voor gebruikers die de details van hun eigen recensies willen zien of voor het weergeven van gedetailleerde recensie-informatie in een gebruikersinterface.
+
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/f8483570-6ce5-42bc-8ac1-76c32091ff5b)
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/7b57b558-cccb-4d55-84ec-0b8dcb3ff303)
+
+### Data ophalen:
+
+Bij een GET-verzoek wordt de review_id die in de URL is opgegeven gebruikt om de specifieke recensie in de database te lokaliseren. Deze review_id is een unieke identificator die aan elke recensie wordt toegekend.
+
+### Response:
+
+* De response is een JSON-object dat de details van de recensie bevat. Dit omvat gewoonlijk de id, rating, comment, en cd_id (de ID van de CD waarop de recensie betrekking heeft).
+* Als er geen recensie met de opgegeven ID wordt gevonden, geeft de API meestal een 404-fout terug met een bericht zoals "Review not found".
+
+### Gebruik:
+
+* Een recensie ophalen: Om de details van een specifieke recensie te bekijken, verstuur je een GET-verzoek naar /reviews/{review_id}. Vervang {review_id} met de daadwerkelijke ID van de recensie die je wilt opvragen.
+* Bijvoorbeeld: **GET /reviews/123** zal de details van de recensie met ID 123 ophalen.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
