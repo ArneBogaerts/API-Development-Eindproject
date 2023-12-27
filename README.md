@@ -54,8 +54,13 @@ Vervolgens om nog een extra endpoint aan te spreken heb ik ook de reviews van ee
 
 ## De volledige API:
 
+Onder deze screenshots, ga ik verder in detail over de nieuwe endpoints die ik ter uitbreiding van het eindproject heb gemaakt.
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/b6fef968-2a90-4d83-b3c6-9e207e05b688)
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/1335adc9-f1be-41a9-b295-0a92779b7a2c)
+
+## ENDPOINT: GET /artists/{artist_id}
+
+Dit endpoint is ontworpen om gedetailleerde informatie over een specifieke artiest op te halen op basis van hun unieke ID. Het biedt een eenvoudige en directe manier om gegevens over een enkele artiest uit de database te verkrijgen.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
