@@ -58,7 +58,7 @@ Onder deze screenshots, ga ik verder in detail over de nieuwe endpoints die ik t
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/b6fef968-2a90-4d83-b3c6-9e207e05b688)
 ![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/1335adc9-f1be-41a9-b295-0a92779b7a2c)
 
-## ENDPOINT: GET /artists/{artist_id}
+## ENDPOINT: GET /artists/{artist_id}/
 
 Dit endpoint is ontworpen om gedetailleerde informatie over een specifieke artiest op te halen op basis van hun unieke ID. Het biedt een eenvoudige en directe manier om gegevens over een enkele artiest uit de database te verkrijgen.
 
@@ -78,6 +78,16 @@ Dit endpoint is ontworpen om gedetailleerde informatie over een specifieke artie
 
 * Een artiest ophalen: Om details van een specifieke artiest op te halen, zou je een GET-verzoek sturen naar /artists/{artist_id}. Vervang {artist_id} met de werkelijke ID van de artiest die je wilt opvragen.
 * Bijvoorbeeld: GET /artists/5 zal de details van de artiest met ID 5 ophalen.
+
+## ENDPOINT: PUT /reviews/{reviews_id}/
+
+Dit endpoint stelt gebruikers in staat om een bestaande recensie te bewerken of bij te werken op basis van de unieke ID van de recensie. Het is een cruciaal onderdeel van de API voor het beheren van de gebruikersfeedback en kwaliteitscontrole van de inhoud.
+
+Hieronder ziet u eerst de GET-request van de review, om vervolgens het PUT-endpoint te gebruiken welke deze review aanpast om tot slot via een nieuwe GET-request de bevestiging te krijgen dat de aanpassing gedaan is.
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/07f234fa-3fa1-4fb5-accd-66f60ed2d7bb)
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/195b34bf-6e0f-48d3-a6c2-13d02b29a9b9)
+
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Basisproject:
