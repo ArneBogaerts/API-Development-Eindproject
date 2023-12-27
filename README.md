@@ -137,6 +137,16 @@ Dit endpoint is bedoeld om een nieuwe gebruiker aan te maken in het systeem. Het
 
 Een POST-verzoek naar /users/ vereist dat je gebruikersgegevens in de body van het verzoek verstuurt. Dit omvat typisch een gebruikersnaam en wachtwoord, en mogelijk aanvullende informatie afhankelijk van de vereisten van je API.
 
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/819e708c-7e3d-4b06-aa2a-8d4ff28a0eb8)
+
+### Response:
+
+* Bij succesvolle creatie, zal de API gewoonlijk een bevestiging terugsturen met de details van de nieuw aangemaakte gebruiker (vaak zonder het wachtwoord voor veiligheidsredenen).
+* De API kan ook een statuscode zoals 201 (Created) terugsturen.
+* Als er een probleem is, zoals een reeds bestaande gebruikersnaam of een ongeldig wachtwoord, zal de API een passende foutmelding en statuscode terugsturen.
+
+### Gebruik:
+
 * De body van het verzoek moet een JSON-object bevatten met ten minste de username en password:
 Bijvoorbeeld:
 
@@ -145,6 +155,30 @@ Bijvoorbeeld:
     "password": "veiligWachtwoord123"
 }
 
+## ENDPOINT: GET /users/{username}/
+
+Dit endpoint is ontworpen om informatie over een specifieke gebruiker op te halen aan de hand van de gebruikersnaam. Het maakt het mogelijk om gebruikersprofielen en hun details te bekijken, wat cruciaal is voor zowel gebruikersbeheer als voor functies binnen de applicatie waar gebruikersinformatie wordt getoond.
+
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/b52a4e3b-ddfc-40de-b0eb-0ab46fdea152)
+
+### Data ophalen:
+
+Bij een GET-verzoek wordt de username die in de URL is opgegeven gebruikt om de specifieke gebruiker in de database te vinden. De username is een unieke identificator voor elke gebruiker in het systeem.
+
+### Response:
+
+* De response is een JSON-object dat de details van de gebruiker bevat. Dit omvat de id en de username. Latere uitbreidingen kunnen ervoor zorgen dat er meer gegevens van de gebruiker worden bewaard zoals emailadres, geboortedatum enz.
+* Als er geen gebruiker met de opgegeven gebruikersnaam wordt gevonden, geeft de API meestal een 404-fout terug met een bericht zoals "User not found".
+
+### Gebruik:
+
+* Een gebruiker ophalen: Om de details van een specifieke gebruiker te bekijken, verstuur je een GET-verzoek naar /users/{username}. Vervang {username} met de daadwerkelijke gebruikersnaam van de persoon die je wilt opvragen.
+* Bijvoorbeeld: **GET /users/janedoe** zal de details van de gebruiker met de gebruikersnaam 'janedoe' ophalen.
+
+### Fouthandeling:
+
+**User not found**, als er geen gebruiker met de opgegeven username wordt gevonden, reageert de API met een 404-statuscode en een bericht dat de gebruiker niet is gevonden. Dit helpt bij het diagnosticeren van typefouten of niet-bestaande accounts.
+![afbeelding](https://github.com/ArneBogaerts/API-Development-Eindproject/assets/113974569/d3b73608-a7bf-4fec-96a9-a9e791354bf0)
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
