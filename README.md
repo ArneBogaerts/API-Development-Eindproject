@@ -1,7 +1,7 @@
 # Uitbreiding van het basisproject
 
 > [!NOTE]
-> Het basisproject, en dus ook de beschrijving van het thema staat onderaan deze readme. In deze readme ben ik bovenaan begonnen aan de uitbreiding van dit project om het onderscheid duidelijk te maken.
+> Het basisproject, en dus ook de beschrijving van het thema staat onderaan deze readme vanaf de titel **Basisproject**. In deze readme ben ik bovenaan begonnen aan de uitbreiding van dit project om het onderscheid duidelijk te maken.
 
 ## Nieuwe functionaliteiten
 
