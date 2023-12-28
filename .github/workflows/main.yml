@@ -19,7 +19,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    name: Test endpoints
+    name: Testing van de endpoints
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
@@ -39,7 +39,7 @@ jobs:
         while true; do
           status=$(curl -sS -o /dev/null -w "%{http_code}" https://api-arnebogaerts.cloud.okteto.net/cds/)
           if [ "$status" -ne 200 ]; then
-            echo "Waiting for API to be ready..."
+            echo "Waiting for your API to be ready..."
             sleep 5
           else
             break
